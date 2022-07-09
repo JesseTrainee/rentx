@@ -1,6 +1,8 @@
 import React from 'react';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { StringLiteral } from 'typescript';
 import Logo from '../../assets/logo.svg';
+import { Car } from '../../components/Car';
 import {
    Container,
    Header,
@@ -9,6 +11,16 @@ import {
 } from './styles';
 
 export function Home() {
+   const carData = {
+      brand: 'AUDI',
+      name: 'RS 5 Coupé',
+      rent: {
+         period: 'AO DIA',
+         price: 120,
+      },
+      thumbnail: '' ,
+   }
+
    return(
    <Container>
       <Header>
@@ -22,6 +34,7 @@ export function Home() {
             </TotalCars>
          </HeaderContent>
       </Header>
+      <Car data={carData}/>
    </Container>
    )
 }
